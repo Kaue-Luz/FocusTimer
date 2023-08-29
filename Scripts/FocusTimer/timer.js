@@ -1,6 +1,14 @@
  import state from './state.js'
  import * as elements from './elements.js'
 
+ export function countdown(){
+   if(!state.isRunning){
+      return
+   }
+
+   setTimeout(() => countdown(), 1000)
+ }
+ 
  export function updateDisplay (minutes, seconds) {
     minutes = minutes ?? state.minutes
     seconds = seconds ?? state.seconds
